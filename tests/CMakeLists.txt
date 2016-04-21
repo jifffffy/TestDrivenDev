@@ -4,6 +4,7 @@ project(TestDrivenDev)
 include_directories(${PROJECT_SOURCE_DIR}/../include)
 include_directories(${PROJECT_SOURCE_DIR}/../include/LedDriver)
 include_directories(${PROJECT_SOURCE_DIR}/../include/HomeAutomation)
+include_directories(${PROJECT_SOURCE_DIR}/../include/util)
 
 # include mocks only for test code
 include_directories(${PROJECT_SOURCE_DIR}/../mocks)
@@ -22,5 +23,15 @@ add_library(LedDriverTest ./LedDriver/LedDriverTest.cpp)
 # build test library for LightControllerSpcTest
 add_library(LightControllerSpcTest ./HomeAutomation/LightControllerSpyTest.cpp)
 
+# build test library for FakeTimeServiceTest
+add_library(FakeTimeServiceTest ./HomeAutomation/FakeTimeServiceTest.cpp)
+
+# build test library for LightSchedulerTest
+add_library(LightSchedulerTest ./HomeAutomation/LightControllerSpyTest.cpp)
+
 add_executable(RunAllTests RunAllTests.cpp)
-target_link_libraries(RunAllTests imp_cpputest LedDriverTest LedDriver RuntimeErrorStub LightControllerSpcTest)
+target_link_libraries(RunAllTests imp_cpputest
+        LedDriverTest LedDriver RuntimeErrorStub
+        FakeTimeServiceTest FakeTimeService
+        LightControllerSpcTest LightControllerSpc
+        LightSchedulerTest LightScheduler)

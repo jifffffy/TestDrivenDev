@@ -5,7 +5,7 @@ extern "C"
 #include "LightControllerSpy.h"
 }
 
-TEST_GROUP(LightControllerSpy)
+TEST_GROUP(LightController)
 {
     void setup()
     {
@@ -18,13 +18,13 @@ TEST_GROUP(LightControllerSpy)
     }
 };
 
-TEST(LightControllerSpy, Create)
+TEST(LightController, Create)
 {
     LONGS_EQUAL(LIGHT_ID_UNKNOW, LightControllerSpy_GetLastId());
     LONGS_EQUAL(LIGHT_STATE_UNKNOW, LightControllerSpy_GetLastState());
 }
 
-TEST(LightControllerSpy, RememberTheLastLightIdControlled)
+TEST(LightController, RememberTheLastLightIdControlled)
 {
     LightController_TurnOn(10);
     LONGS_EQUAL(10, LightControllerSpy_GetLastId());

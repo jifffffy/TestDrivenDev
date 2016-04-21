@@ -1,0 +1,42 @@
+#include "LightControllerSpy.h"
+
+static int lastId;
+static int lastState;
+
+void LightController_Create(void)
+{
+    lastId = LIGHT_ID_UNKNOW;
+    lastState = LIGHT_STATE_UNKNOW;
+}
+
+void LightController_Destroy(void)
+{
+
+};
+
+void LightController_TurnOn(int id)
+{
+    lastId = id;
+    lastState = LIGHT_ON;
+}
+
+void LightController_TurnOff(int id)
+{
+    lastId = id;
+    lastState = LIGHT_OFF;
+}
+
+int LightControllerSpy_GetLastId(void)
+{
+    return lastId;
+};
+
+int LightControllerSpy_GetLastState(void)
+{
+    return lastState;
+};
+
+void LightContorller_Wakeup(void)
+{
+
+};
