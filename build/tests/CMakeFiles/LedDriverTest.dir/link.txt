@@ -1,0 +1,2 @@
+/usr/bin/ar.exe cq ../lib/libLedDriverTest.a  CMakeFiles/LedDriverTest.dir/LedDriver/LedDriverTest.cpp.o
+/usr/bin/ranlib.exe ../lib/libLedDriverTest.a

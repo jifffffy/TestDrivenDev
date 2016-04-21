@@ -1,0 +1,1 @@
+/usr/bin/c++.exe    -Wl,--enable-auto-import CMakeFiles/RunAllTests.dir/RunAllTests.cpp.o  -o ../bin/RunAllTests.exe -Wl,--out-implib,../lib/libRunAllTests.dll.a -Wl,--major-image-version,0,--minor-image-version,0  "F:\\learn\\samples\\clion\\cpputest/src/CppUTest/libCppUTest.a" ../lib/libLedDriverTest.a ../lib/libLedDriver.a 

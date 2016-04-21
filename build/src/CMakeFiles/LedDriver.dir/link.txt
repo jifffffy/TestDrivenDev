@@ -1,0 +1,2 @@
+/usr/bin/ar.exe cq ../lib/libLedDriver.a  CMakeFiles/LedDriver.dir/LedDriver/LedDriver.c.o
+/usr/bin/ranlib.exe ../lib/libLedDriver.a

@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/../include/LedDriver/LedDriver.h
+stdint.h
+-
+
+/cygdrive/f/learn/samples/TestDrivenDev/src/LedDriver/LedDriver.c
+LedDriver.h
+/cygdrive/f/learn/samples/TestDrivenDev/src/LedDriver/LedDriver.h
+

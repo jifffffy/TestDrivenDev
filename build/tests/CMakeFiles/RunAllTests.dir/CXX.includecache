@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/f/learn/samples/TestDrivenDev/tests/RunAllTests.cpp
+CppUTest/CommandLineTestRunner.h
+/cygdrive/f/learn/samples/TestDrivenDev/tests/CppUTest/CommandLineTestRunner.h
+
