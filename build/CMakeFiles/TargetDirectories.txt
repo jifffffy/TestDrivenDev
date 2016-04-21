@@ -1,4 +1,5 @@
 /cygdrive/f/learn/samples/TestDrivenDev/build/tests/CMakeFiles/LedDriverTest.dir
 /cygdrive/f/learn/samples/TestDrivenDev/build/mocks/CMakeFiles/RuntimeErrorStub.dir
 /cygdrive/f/learn/samples/TestDrivenDev/build/tests/CMakeFiles/RunAllTests.dir
+/cygdrive/f/learn/samples/TestDrivenDev/build/tests/CMakeFiles/LightControllerSpcTest.dir
 /cygdrive/f/learn/samples/TestDrivenDev/build/src/CMakeFiles/LedDriver.dir

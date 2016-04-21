@@ -126,6 +126,21 @@ LedDriverTest/fast:
 .PHONY : LedDriverTest/fast
 
 # Convenience name for target.
+tests/CMakeFiles/LightControllerSpcTest.dir/rule:
+	cd /cygdrive/f/learn/samples/TestDrivenDev/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/LightControllerSpcTest.dir/rule
+.PHONY : tests/CMakeFiles/LightControllerSpcTest.dir/rule
+
+# Convenience name for target.
+LightControllerSpcTest: tests/CMakeFiles/LightControllerSpcTest.dir/rule
+
+.PHONY : LightControllerSpcTest
+
+# fast build rule for target.
+LightControllerSpcTest/fast:
+	cd /cygdrive/f/learn/samples/TestDrivenDev/build && $(MAKE) -f tests/CMakeFiles/LightControllerSpcTest.dir/build.make tests/CMakeFiles/LightControllerSpcTest.dir/build
+.PHONY : LightControllerSpcTest/fast
+
+# Convenience name for target.
 tests/CMakeFiles/RunAllTests.dir/rule:
 	cd /cygdrive/f/learn/samples/TestDrivenDev/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/RunAllTests.dir/rule
 .PHONY : tests/CMakeFiles/RunAllTests.dir/rule
@@ -139,6 +154,33 @@ RunAllTests: tests/CMakeFiles/RunAllTests.dir/rule
 RunAllTests/fast:
 	cd /cygdrive/f/learn/samples/TestDrivenDev/build && $(MAKE) -f tests/CMakeFiles/RunAllTests.dir/build.make tests/CMakeFiles/RunAllTests.dir/build
 .PHONY : RunAllTests/fast
+
+HomeAutomation/LightControllerSpyTest.o: HomeAutomation/LightControllerSpyTest.cpp.o
+
+.PHONY : HomeAutomation/LightControllerSpyTest.o
+
+# target to build an object file
+HomeAutomation/LightControllerSpyTest.cpp.o:
+	cd /cygdrive/f/learn/samples/TestDrivenDev/build && $(MAKE) -f tests/CMakeFiles/LightControllerSpcTest.dir/build.make tests/CMakeFiles/LightControllerSpcTest.dir/HomeAutomation/LightControllerSpyTest.cpp.o
+.PHONY : HomeAutomation/LightControllerSpyTest.cpp.o
+
+HomeAutomation/LightControllerSpyTest.i: HomeAutomation/LightControllerSpyTest.cpp.i
+
+.PHONY : HomeAutomation/LightControllerSpyTest.i
+
+# target to preprocess a source file
+HomeAutomation/LightControllerSpyTest.cpp.i:
+	cd /cygdrive/f/learn/samples/TestDrivenDev/build && $(MAKE) -f tests/CMakeFiles/LightControllerSpcTest.dir/build.make tests/CMakeFiles/LightControllerSpcTest.dir/HomeAutomation/LightControllerSpyTest.cpp.i
+.PHONY : HomeAutomation/LightControllerSpyTest.cpp.i
+
+HomeAutomation/LightControllerSpyTest.s: HomeAutomation/LightControllerSpyTest.cpp.s
+
+.PHONY : HomeAutomation/LightControllerSpyTest.s
+
+# target to generate assembly for a file
+HomeAutomation/LightControllerSpyTest.cpp.s:
+	cd /cygdrive/f/learn/samples/TestDrivenDev/build && $(MAKE) -f tests/CMakeFiles/LightControllerSpcTest.dir/build.make tests/CMakeFiles/LightControllerSpcTest.dir/HomeAutomation/LightControllerSpyTest.cpp.s
+.PHONY : HomeAutomation/LightControllerSpyTest.cpp.s
 
 LedDriver/LedDriverTest.o: LedDriver/LedDriverTest.cpp.o
 
@@ -203,7 +245,11 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... RunAllTests"
+	@echo "... LightControllerSpcTest"
 	@echo "... LedDriverTest"
+	@echo "... HomeAutomation/LightControllerSpyTest.o"
+	@echo "... HomeAutomation/LightControllerSpyTest.i"
+	@echo "... HomeAutomation/LightControllerSpyTest.s"
 	@echo "... LedDriver/LedDriverTest.o"
 	@echo "... LedDriver/LedDriverTest.i"
 	@echo "... LedDriver/LedDriverTest.s"

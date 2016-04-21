@@ -94,6 +94,7 @@ bin/RunAllTests.exe: F:\learn\samples\clion\cpputest/src/CppUTest/libCppUTest.a
 bin/RunAllTests.exe: lib/libLedDriverTest.a
 bin/RunAllTests.exe: lib/libLedDriver.a
 bin/RunAllTests.exe: lib/libRuntimeErrorStub.a
+bin/RunAllTests.exe: lib/libLightControllerSpcTest.a
 bin/RunAllTests.exe: tests/CMakeFiles/RunAllTests.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/f/learn/samples/TestDrivenDev/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../bin/RunAllTests.exe"
 	cd /cygdrive/f/learn/samples/TestDrivenDev/build/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RunAllTests.dir/link.txt --verbose=$(VERBOSE)

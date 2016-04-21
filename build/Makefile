@@ -150,6 +150,19 @@ LedDriverTest/fast:
 .PHONY : LedDriverTest/fast
 
 #=============================================================================
+# Target rules for targets named LightControllerSpcTest
+
+# Build rule for target.
+LightControllerSpcTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 LightControllerSpcTest
+.PHONY : LightControllerSpcTest
+
+# fast build rule for target.
+LightControllerSpcTest/fast:
+	$(MAKE) -f tests/CMakeFiles/LightControllerSpcTest.dir/build.make tests/CMakeFiles/LightControllerSpcTest.dir/build
+.PHONY : LightControllerSpcTest/fast
+
+#=============================================================================
 # Target rules for targets named RunAllTests
 
 # Build rule for target.
@@ -173,6 +186,7 @@ help:
 	@echo "... LedDriver"
 	@echo "... RuntimeErrorStub"
 	@echo "... RunAllTests"
+	@echo "... LightControllerSpcTest"
 	@echo "... LedDriverTest"
 .PHONY : help
 

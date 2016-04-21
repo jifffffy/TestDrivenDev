@@ -3,6 +3,7 @@ project(TestDrivenDev)
 # include project source
 include_directories(${PROJECT_SOURCE_DIR}/../include)
 include_directories(${PROJECT_SOURCE_DIR}/../include/LedDriver)
+include_directories(${PROJECT_SOURCE_DIR}/../include/HomeAutomation)
 
 # include mocks only for test code
 include_directories(${PROJECT_SOURCE_DIR}/../mocks)
@@ -18,5 +19,8 @@ set_property(TARGET imp_cpputest PROPERTY
 # build test library for LedDriver
 add_library(LedDriverTest ./LedDriver/LedDriverTest.cpp)
 
+# build test library for LightControllerSpcTest
+add_library(LightControllerSpcTest ./HomeAutomation/LightControllerSpyTest.cpp)
+
 add_executable(RunAllTests RunAllTests.cpp)
-target_link_libraries(RunAllTests imp_cpputest LedDriverTest LedDriver RuntimeErrorStub)
+target_link_libraries(RunAllTests imp_cpputest LedDriverTest LedDriver RuntimeErrorStub LightControllerSpcTest)

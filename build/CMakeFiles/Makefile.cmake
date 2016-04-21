@@ -52,5 +52,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/LedDriver.dir/DependInfo.cmake"
   "mocks/CMakeFiles/RuntimeErrorStub.dir/DependInfo.cmake"
   "tests/CMakeFiles/RunAllTests.dir/DependInfo.cmake"
+  "tests/CMakeFiles/LightControllerSpcTest.dir/DependInfo.cmake"
   "tests/CMakeFiles/LedDriverTest.dir/DependInfo.cmake"
   )
