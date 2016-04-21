@@ -28,30 +28,33 @@
 
 extern "C"
 {
-  #include "LedDriver.h"
+#include "LedDriver.h"
 
 }
 
-TEST_GROUP(LedDriver)
-{
+TEST_GROUP(LedDriver) {
 
     uint16_t virtualLeds;
 
-    void setup()
-    {
-      virtualLeds = 0;
-      LedDriver_Create(&virtualLeds);
+    void setup() {
+        virtualLeds = 0;
+        LedDriver_Create(&virtualLeds);
     }
 
-    void teardown()
-    {
-      LedDriver_Destroy();
+    void teardown() {
+        LedDriver_Destroy();
     }
 };
 
-TEST(LedDriver, LedsAreOffAfterCreate)
-{
-  virtualLeds = 0xffff;
-  LedDriver_Create(&virtualLeds);
-  LONGS_EQUAL(0, virtualLeds);
+TEST(LedDriver, LedsAreOffAfterCreate) {
+    virtualLeds = 0xffff;
+    LedDriver_Create(&virtualLeds);
+    LONGS_EQUAL(0, virtualLeds);
+}
+
+TEST(LedDriver, TurnOnLedOne) {
+    uint16_t virtualLeds;
+    LedDriver_Create(&virtualLeds);
+    LedDriver_TurnOn(1);
+    LONGS_EQUAL(1, virtualLeds);
 }
