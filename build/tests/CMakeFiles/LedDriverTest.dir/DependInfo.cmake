@@ -12,6 +12,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../tests/../include"
   "../tests/../include/LedDriver"
+  "../tests/../mocks"
   "../tests/F:/learn/samples/clion/cpputest/include"
   )
 

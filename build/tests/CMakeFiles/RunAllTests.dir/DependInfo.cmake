@@ -12,6 +12,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../tests/../include"
   "../tests/../include/LedDriver"
+  "../tests/../mocks"
   "../tests/F:/learn/samples/clion/cpputest/include"
   )
 
@@ -19,4 +20,5 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/cygdrive/f/learn/samples/TestDrivenDev/build/tests/CMakeFiles/LedDriverTest.dir/DependInfo.cmake"
   "/cygdrive/f/learn/samples/TestDrivenDev/build/src/CMakeFiles/LedDriver.dir/DependInfo.cmake"
+  "/cygdrive/f/learn/samples/TestDrivenDev/build/mocks/CMakeFiles/RuntimeErrorStub.dir/DependInfo.cmake"
   )

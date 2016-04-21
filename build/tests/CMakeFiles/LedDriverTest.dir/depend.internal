@@ -3,4 +3,6 @@
 
 tests/CMakeFiles/LedDriverTest.dir/LedDriver/LedDriverTest.cpp.o
  ../tests/../include/LedDriver/LedDriver.h
+ ../tests/../include/RuntimeError.h
+ ../tests/../mocks/RuntimeErrorStub.h
  /cygdrive/f/learn/samples/TestDrivenDev/tests/LedDriver/LedDriverTest.cpp

@@ -10,9 +10,17 @@
 stdint.h
 -
 
+../tests/../include/RuntimeError.h
+
+../tests/../mocks/RuntimeErrorStub.h
+RuntimeError.h
+../tests/../mocks/RuntimeError.h
+
 /cygdrive/f/learn/samples/TestDrivenDev/tests/LedDriver/LedDriverTest.cpp
 CppUTest/TestHarness.h
 /cygdrive/f/learn/samples/TestDrivenDev/tests/LedDriver/CppUTest/TestHarness.h
 LedDriver.h
 /cygdrive/f/learn/samples/TestDrivenDev/tests/LedDriver/LedDriver.h
+RuntimeErrorStub.h
+/cygdrive/f/learn/samples/TestDrivenDev/tests/LedDriver/RuntimeErrorStub.h
 

@@ -12,6 +12,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.3.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.3.2/CMakeRCCompiler.cmake"
   "CMakeFiles/3.3.2/CMakeSystem.cmake"
+  "../mocks/CMakeLists.txt"
   "../src/CMakeLists.txt"
   "../tests/CMakeLists.txt"
   "/usr/share/cmake-3.3.2/Modules/CMakeCInformation.cmake"
@@ -42,12 +43,14 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "mocks/CMakeFiles/CMakeDirectoryInformation.cmake"
   "tests/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/LedDriver.dir/DependInfo.cmake"
+  "mocks/CMakeFiles/RuntimeErrorStub.dir/DependInfo.cmake"
   "tests/CMakeFiles/RunAllTests.dir/DependInfo.cmake"
   "tests/CMakeFiles/LedDriverTest.dir/DependInfo.cmake"
   )

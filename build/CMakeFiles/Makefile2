@@ -115,6 +115,61 @@ clean: src/CMakeFiles/LedDriver.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory mocks
+
+# Convenience name for "all" pass in the directory.
+mocks/all: mocks/CMakeFiles/RuntimeErrorStub.dir/all
+
+.PHONY : mocks/all
+
+# Convenience name for "clean" pass in the directory.
+mocks/clean: mocks/CMakeFiles/RuntimeErrorStub.dir/clean
+
+.PHONY : mocks/clean
+
+# Convenience name for "preinstall" pass in the directory.
+mocks/preinstall:
+
+.PHONY : mocks/preinstall
+
+#=============================================================================
+# Target rules for target mocks/CMakeFiles/RuntimeErrorStub.dir
+
+# All Build rule for target.
+mocks/CMakeFiles/RuntimeErrorStub.dir/all:
+	$(MAKE) -f mocks/CMakeFiles/RuntimeErrorStub.dir/build.make mocks/CMakeFiles/RuntimeErrorStub.dir/depend
+	$(MAKE) -f mocks/CMakeFiles/RuntimeErrorStub.dir/build.make mocks/CMakeFiles/RuntimeErrorStub.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/f/learn/samples/TestDrivenDev/build/CMakeFiles --progress-num=7,8 "Built target RuntimeErrorStub"
+.PHONY : mocks/CMakeFiles/RuntimeErrorStub.dir/all
+
+# Include target in all.
+all: mocks/CMakeFiles/RuntimeErrorStub.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+mocks/CMakeFiles/RuntimeErrorStub.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/f/learn/samples/TestDrivenDev/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 mocks/CMakeFiles/RuntimeErrorStub.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/f/learn/samples/TestDrivenDev/build/CMakeFiles 0
+.PHONY : mocks/CMakeFiles/RuntimeErrorStub.dir/rule
+
+# Convenience name for target.
+RuntimeErrorStub: mocks/CMakeFiles/RuntimeErrorStub.dir/rule
+
+.PHONY : RuntimeErrorStub
+
+# clean rule for target.
+mocks/CMakeFiles/RuntimeErrorStub.dir/clean:
+	$(MAKE) -f mocks/CMakeFiles/RuntimeErrorStub.dir/build.make mocks/CMakeFiles/RuntimeErrorStub.dir/clean
+.PHONY : mocks/CMakeFiles/RuntimeErrorStub.dir/clean
+
+# clean rule for target.
+clean: mocks/CMakeFiles/RuntimeErrorStub.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Directory level rules for directory tests
 
 # Convenience name for "all" pass in the directory.
@@ -176,6 +231,7 @@ clean: tests/CMakeFiles/LedDriverTest.dir/clean
 
 # All Build rule for target.
 tests/CMakeFiles/RunAllTests.dir/all: src/CMakeFiles/LedDriver.dir/all
+tests/CMakeFiles/RunAllTests.dir/all: mocks/CMakeFiles/RuntimeErrorStub.dir/all
 tests/CMakeFiles/RunAllTests.dir/all: tests/CMakeFiles/LedDriverTest.dir/all
 	$(MAKE) -f tests/CMakeFiles/RunAllTests.dir/build.make tests/CMakeFiles/RunAllTests.dir/depend
 	$(MAKE) -f tests/CMakeFiles/RunAllTests.dir/build.make tests/CMakeFiles/RunAllTests.dir/build
@@ -189,7 +245,7 @@ all: tests/CMakeFiles/RunAllTests.dir/all
 
 # Build rule for subdir invocation for target.
 tests/CMakeFiles/RunAllTests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/f/learn/samples/TestDrivenDev/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/f/learn/samples/TestDrivenDev/build/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/RunAllTests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/f/learn/samples/TestDrivenDev/build/CMakeFiles 0
 .PHONY : tests/CMakeFiles/RunAllTests.dir/rule

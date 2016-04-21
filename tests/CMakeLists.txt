@@ -4,6 +4,9 @@ project(TestDrivenDev)
 include_directories(${PROJECT_SOURCE_DIR}/../include)
 include_directories(${PROJECT_SOURCE_DIR}/../include/LedDriver)
 
+# include mocks only for test code
+include_directories(${PROJECT_SOURCE_DIR}/../mocks)
+
 # include CppUTest headers
 include_directories($ENV{CPPUTEST_HOME}/include)
 
@@ -16,4 +19,4 @@ set_property(TARGET imp_cpputest PROPERTY
 add_library(LedDriverTest ./LedDriver/LedDriverTest.cpp)
 
 add_executable(RunAllTests RunAllTests.cpp)
-target_link_libraries(RunAllTests imp_cpputest LedDriverTest LedDriver)
+target_link_libraries(RunAllTests imp_cpputest LedDriverTest LedDriver RuntimeErrorStub)

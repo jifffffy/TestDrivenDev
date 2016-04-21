@@ -124,6 +124,19 @@ LedDriver/fast:
 .PHONY : LedDriver/fast
 
 #=============================================================================
+# Target rules for targets named RuntimeErrorStub
+
+# Build rule for target.
+RuntimeErrorStub: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RuntimeErrorStub
+.PHONY : RuntimeErrorStub
+
+# fast build rule for target.
+RuntimeErrorStub/fast:
+	$(MAKE) -f mocks/CMakeFiles/RuntimeErrorStub.dir/build.make mocks/CMakeFiles/RuntimeErrorStub.dir/build
+.PHONY : RuntimeErrorStub/fast
+
+#=============================================================================
 # Target rules for targets named LedDriverTest
 
 # Build rule for target.
@@ -158,6 +171,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... LedDriver"
+	@echo "... RuntimeErrorStub"
 	@echo "... RunAllTests"
 	@echo "... LedDriverTest"
 .PHONY : help

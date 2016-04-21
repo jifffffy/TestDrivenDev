@@ -180,6 +180,9 @@ LedDriverTest_LIB_DEPENDS:STATIC=
 //Dependencies for target
 LedDriver_LIB_DEPENDS:STATIC=
 
+//Dependencies for target
+RuntimeErrorStub_LIB_DEPENDS:STATIC=
+
 //Value Computed by CMake
 TestDrivenDev_BINARY_DIR:STATIC=/cygdrive/f/learn/samples/TestDrivenDev/build/tests
 
@@ -277,7 +280,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=3
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=4
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

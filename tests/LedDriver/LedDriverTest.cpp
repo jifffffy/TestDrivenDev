@@ -28,7 +28,8 @@
 
 extern "C"
 {
-#include "LedDriver.h"
+    #include "LedDriver.h"
+    #include "RuntimeErrorStub.h"
 
 }
 
@@ -63,4 +64,56 @@ TEST(LedDriver, TurnOffLedOne){
     LedDriver_TurnOn(1);
     LedDriver_TurnOff(1);
     LONGS_EQUAL(0, virtualLeds);
+}
+
+TEST(LedDriver, TurnOnMultipleLeds){
+    LedDriver_TurnOn(9);
+    LedDriver_TurnOn(8);
+    LONGS_EQUAL(0x180, virtualLeds);
+}
+
+TEST(LedDriver, TurmOffAnyLed){
+    LedDriver_TurnAllOn();
+    LedDriver_TurnOff(8);
+    LONGS_EQUAL(0xff7f, virtualLeds);
+}
+
+TEST(LedDriver, AllOn){
+    LedDriver_TurnAllOn();
+    LONGS_EQUAL(0xffff, virtualLeds);
+}
+
+TEST(LedDriver, LedMemoryIsNotReadable){
+    virtualLeds = 0xffff;
+    LedDriver_TurnOn(8);
+    LONGS_EQUAL(0x80, virtualLeds);
+}
+
+TEST(LedDriver, OutOfBoundsTurnOnDoesNoHarm){
+    LedDriver_TurnOn(-1);
+    LedDriver_TurnOn(0);
+    LedDriver_TurnOn(17);
+    LedDriver_TurnOn(3141);
+    LONGS_EQUAL(0, virtualLeds);
+}
+
+TEST(LedDriver, OutOfBoundsTurnOffDoesNoHarm){
+    LedDriver_TurnAllOn();
+
+    LedDriver_TurnOff(-1);
+    LedDriver_TurnOff(0);
+    LedDriver_TurnOff(17);
+    LedDriver_TurnOff(3141);
+    LONGS_EQUAL(0xffff, virtualLeds);
+}
+
+TEST(LedDriver, OutOfBoundsProducesRuntimeError){
+    LedDriver_TurnOn(-1);
+    STRCMP_EQUAL("LED Driver: out-of-bounds LED", RuntimeErrorStub_GetLastError());
+}
+
+TEST(LedDriver, IsOn){
+    CHECK_EQUAL(FALSE, LedDriver_IsOn(1));
+    LedDriver_TurnOn(1);
+    CHECK_EQUAL(TRUE, LedDriver_IsOn(1));
 }

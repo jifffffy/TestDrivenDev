@@ -30,6 +30,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/cygdrive/f/learn/samples/TestDrivenDev/build/src/cmake_install.cmake")
+  include("/cygdrive/f/learn/samples/TestDrivenDev/build/mocks/cmake_install.cmake")
   include("/cygdrive/f/learn/samples/TestDrivenDev/build/tests/cmake_install.cmake")
 
 endif()
