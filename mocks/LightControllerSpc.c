@@ -14,13 +14,13 @@ void LightController_Destroy(void)
 
 };
 
-void LightController_TurnOn(int id)
+void LightController_On(int id)
 {
     lastId = id;
     lastState = LIGHT_ON;
 }
 
-void LightController_TurnOff(int id)
+void LightController_Off(int id)
 {
     lastId = id;
     lastState = LIGHT_OFF;

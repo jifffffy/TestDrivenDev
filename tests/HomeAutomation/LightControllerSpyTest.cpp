@@ -26,7 +26,7 @@ TEST(LightController, Create)
 
 TEST(LightController, RememberTheLastLightIdControlled)
 {
-    LightController_TurnOn(10);
+    LightController_On(10);
     LONGS_EQUAL(10, LightControllerSpy_GetLastId());
     LONGS_EQUAL(LIGHT_ON, LightControllerSpy_GetLastState());
 }

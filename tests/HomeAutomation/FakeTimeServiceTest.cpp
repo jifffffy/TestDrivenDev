@@ -20,14 +20,14 @@ TEST_GROUP(TimeService)
 
 TEST(TimeService, Create)
 {
-    //LONGS_EQUAL(-1, TimeService_GetMinute());
-    //LONGS_EQUAL(-1, TimeService_GetDay());
+    LONGS_EQUAL(-1, TimeService_GetMinute());
+    LONGS_EQUAL(-1, TimeService_GetDay());
 }
 
 TEST(TimeService, Set)
 {
     FakeTimeService_SetMinute(42);
-    //LONGS_EQUAL(42, TimeService_GetMinute());
+    LONGS_EQUAL(42, TimeService_GetMinute());
     FakeTimeService_SetDay(3);
-    //LONGS_EQUAL(3, TimeService_GetDay());
+    LONGS_EQUAL(3, TimeService_GetDay());
 }
