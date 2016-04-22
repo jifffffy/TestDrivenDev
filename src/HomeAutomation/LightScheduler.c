@@ -17,15 +17,38 @@ typedef struct
     int id;
     int minuteOfDay;
     int event;
+    Day day;
 } ScheduledLightEvent;
 
 static ScheduledLightEvent scheduledLightEvent;
+
 
 static void scheduleEvent(int id, Day day, int minuteOfDay , int event)
 {
     scheduledLightEvent.id = id;
     scheduledLightEvent.event = event;
     scheduledLightEvent.minuteOfDay = minuteOfDay;
+    scheduledLightEvent.day = day;
+}
+
+static int DoesLightRespondToday(Time * time, int reactionDay)
+{
+    int today = time->dayOfWeek;
+
+    if(reactionDay == EVERYDAY)
+        return TRUE;
+
+    if(reactionDay == today)
+        return TRUE;
+
+    if(reactionDay ==WEEKEND && (SATURDAY == today || SUNDAY == today))
+        return TRUE;
+
+    if(reactionDay ==WEEKEND && today >= MONDAY && today <+FRIDAY)
+        return TRUE;
+
+    return FALSE;
+
 }
 
 static void operateLight(ScheduledLightEvent * lightEvent)
@@ -42,6 +65,9 @@ static void processEventDueNow(Time * time, ScheduledLightEvent * lightEvent)
     if(lightEvent->id == UNUSED)
         return;
 
+    if(!DoesLightRespondToday(time, lightEvent->day))
+        return;
+
     if(lightEvent->minuteOfDay != time->minuteOfDay)
         return;
 
@@ -51,6 +77,8 @@ static void processEventDueNow(Time * time, ScheduledLightEvent * lightEvent)
 void LightScheduler_Create(void)
 {
     scheduledLightEvent.id = UNUSED;
+
+    TimeService_SetPeriodicAlarmInSeconds(60, LightScheduler_WakeUp);
 };
 void LightScheduler_Destroy(void)
 {

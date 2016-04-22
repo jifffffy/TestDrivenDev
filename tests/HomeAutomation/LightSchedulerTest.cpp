@@ -74,11 +74,9 @@ TEST(LightScheduler, SecheduleOnEverydayNotTimeYet)
 TEST(LightScheduler, ScheduleOnEverydayItsTime)
 {
     LightScheduler_ScheduleTurnOn(3, EVERYDAY, 1200);
-    FakeTimeService_SetMinute(1200);
-    FakeTimeService_SetDay(MONDAY);
+    setTimeTo(MONDAY, 1200);
     LightScheduler_WakeUp();
-    LONGS_EQUAL(3, LightControllerSpy_GetLastId());
-    LONGS_EQUAL(LIGHT_ON, LightControllerSpy_GetLastState());
+    checkLightState(3, LIGHT_ON);
 }
 
 TEST(LightScheduler, ScheduleTurnOffEverydayItsTime)
@@ -90,5 +88,57 @@ TEST(LightScheduler, ScheduleTurnOffEverydayItsTime)
 
     checkLightState(3, LIGHT_OFF);
 
+}
+
+TEST(LightScheduler, ScheduleTuesdayButItsMonday)
+{
+    LightScheduler_ScheduleTurnOn(3, TUESDAY, 1200);
+    setTimeTo(MONDAY, 1200);
+    LightScheduler_WakeUp();
+    checkLightState(LIGHT_ID_UNKNOW, LIGHT_STATE_UNKNOW);
+}
+
+TEST(LightScheduler, ScheduleTuesdayAndItsTuesday)
+{
+    LightScheduler_ScheduleTurnOn(3, TUESDAY, 1200);
+    setTimeTo(TUESDAY, 1200);
+    LightScheduler_WakeUp();
+    checkLightState(3, LIGHT_ON);
+}
+
+TEST(LightScheduler, ScheduleWeekEndItsFriday)
+{
+    LightScheduler_ScheduleTurnOn(3, WEEKEND, 1200);
+    setTimeTo(FRIDAY, 1200);
+    LightScheduler_WakeUp();
+
+    checkLightState(LIGHT_ID_UNKNOW, LIGHT_STATE_UNKNOW);
+}
+
+TEST(LightScheduler, ScheduleWeekEndItsSaturday)
+{
+    LightScheduler_ScheduleTurnOn(3, WEEKEND, 1200);
+    setTimeTo(SATURDAY, 1200);
+    LightScheduler_WakeUp();
+    checkLightState(3, LIGHT_ON);
+}
+
+TEST_GROUP(LightSchedulerInitAndCleanup)
+{
+
+};
+TEST(LightSchedulerInitAndCleanup, CreateStartsOneMinuteAlarm)
+{
+    LightScheduler_Create();
+    POINTERS_EQUAL((void *)LightScheduler_WakeUp, (void *)FakeTimeService_GetAlarmCallback());
+    LONGS_EQUAL(60, FakeTimeService_GetAlarmPeriod());
+    LightScheduler_Destroy();
+}
+
+TEST(LightSchedulerInitAndCleanup, DestoryCancelOneMinuteAlarm)
+{
+    LightScheduler_Create();
+    LightScheduler_Destroy();
+    POINTERS_EQUAL(NULL, (void *)FakeTimeService_GetAlarmCallback());
 }
 

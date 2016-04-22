@@ -43,6 +43,8 @@ typedef enum Month {
 
 typedef struct Time Time;
 
+typedef void  (*WakeupCallback)(void);
+
 struct Time
 {
     int usec;
@@ -60,6 +62,9 @@ int TimeService_GetMinute(void);
 int TimeService_GetDay(void);
 
 void TimeService_GetTime(Time *);
+
+void TimeService_SetPeriodicAlarmInSeconds(int seconds, WakeupCallback);
+void TimeService_CancelPeriodicAlarmInSeconds(int seconds, WakeupCallback);
 
 BOOL TimeService_MatchesDayOfWeek(const Time *, Day day);
 BOOL TimeService_MatchesMinuteOfDay(const Time *, int minute);

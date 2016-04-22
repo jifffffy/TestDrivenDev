@@ -3,6 +3,9 @@
 static long int theMinute;
 static int theDay;
 
+static WakeupCallback callback;
+static int period;
+
 void FakeTimeService_SetMinute(int minute)
 {
     theMinute = minute;
@@ -38,4 +41,30 @@ int TimeService_GetMinute(void)
 int TimeService_GetDay(void)
 {
     return theDay;
+};
+
+
+void TimeService_SetPeriodicAlarmInSeconds(int seconds, WakeupCallback cb)
+{
+    callback = cb;
+    period = seconds;
+
+};
+void TimeService_CancelPeriodicAlarmInSeconds(int seconds, WakeupCallback cb)
+{
+    if(cb == callback && period == seconds)
+    {
+        callback = NULL;
+        period = 0;
+    }
+};
+
+WakeupCallback FakeTimeService_GetAlarmCallback(void)
+{
+    return callback;
+};
+
+int FakeTimeService_GetAlarmPeriod()
+{
+    return period;
 };
