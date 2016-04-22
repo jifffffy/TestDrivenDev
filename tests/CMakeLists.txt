@@ -32,6 +32,7 @@ add_library(LightSchedulerTest ./HomeAutomation/LightControllerSpyTest.cpp)
 add_executable(RunAllTests RunAllTests.cpp)
 target_link_libraries(RunAllTests imp_cpputest
         LedDriverTest LedDriver RuntimeErrorStub
+        LightSchedulerTest LightScheduler
         FakeTimeServiceTest FakeTimeService
         LightControllerSpcTest LightControllerSpc
-        LightSchedulerTest LightScheduler)
+        )
