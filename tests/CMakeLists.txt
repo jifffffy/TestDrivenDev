@@ -27,7 +27,7 @@ add_library(LightControllerSpcTest ./HomeAutomation/LightControllerSpyTest.cpp)
 add_library(FakeTimeServiceTest ./HomeAutomation/FakeTimeServiceTest.cpp)
 
 # build test library for LightSchedulerTest
-add_library(LightSchedulerTest ./HomeAutomation/LightControllerSpyTest.cpp)
+add_library(LightSchedulerTest ./HomeAutomation/LightSchedulerTest.cpp)
 
 add_executable(RunAllTests RunAllTests.cpp)
 target_link_libraries(RunAllTests imp_cpputest
